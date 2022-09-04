@@ -1,0 +1,37 @@
+<!-- Store this code in 'index.html' file inside the 'templates' folder-->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Gambar</title>
+</head>
+
+<body>
+    <h1>Upload an Image</h1><br>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" id="image_retina" name="desises_image" accept=".png">
+        <label for="desises_image">Select image...</label><br>
+
+        <button type="submit" value="Submite">Upload</button><br>
+        <!-- <a href="/predict_image">bercanda anda</a> -->
+        <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+    </form>
+
+    {% if answer %}
+    <p>{{answer}}</p><br>
+
+
+    {% if data.shape[0] > 0 %}
+
+    <!-- {{ data.reset_index(drop = True).to_html(classes="table table-striped") | safe}} -->
+
+    {% endif %}
+
+    <p><img src="{{user_image}}" style='width:500px' /><br>
+
+        {% endif %}
+    
+</body>
+
+</html>
